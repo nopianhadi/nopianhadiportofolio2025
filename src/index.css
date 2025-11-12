@@ -9,6 +9,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offset untuk fixed header */
   }
 
   body {
@@ -19,6 +20,7 @@
     font-weight: 400;
     line-height: 1.6;
     font-size: 13px; /* Base font size lebih kecil untuk mobile */
+    overflow-x: hidden; /* Mencegah horizontal scroll */
   }
 
   @media (min-width: 768px) {
