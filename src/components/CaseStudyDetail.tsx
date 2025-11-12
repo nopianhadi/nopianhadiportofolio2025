@@ -68,9 +68,9 @@ const getYouTubeEmbedUrl = (url: string): string | null => {
     }
   }
   
-  // Return embed URL if video ID found and valid
+  // Return embed URL if video ID found and valid (using youtube-nocookie for privacy)
   if (videoId && videoId.length > 5) {
-    return `https://www.youtube.com/embed/${videoId}`;
+    return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`;
   }
   
   // Return null if no valid video ID found
@@ -423,8 +423,10 @@ const CaseStudyDetail: React.FC = () => {
                     src={embedUrl}
                     title={`${project.title} Video`}
                     className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
                   />
                 </div>
               </div>
